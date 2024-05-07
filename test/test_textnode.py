@@ -2,32 +2,29 @@ import unittest
 
 from textnode import TextNode
 
-
 class TestTextNode(unittest.TestCase):
+    #Testing basic TextNode class functionality
     def test_eq(self):
         node = TextNode("This is a text node", "bold")
         node2 = TextNode("This is a text node", "bold")
-        message = "Both nodes are equal"
-        self.assertEqual(node, node2, message)
+        self.assertEqual(node, node2)
 
     def test_not_eq(self):
         node = TextNode("This is a text node", "bold")
         node2 = TextNode("This is a text node2", "bold")
-        message = "Both nodes are not equal"
-        self.assertNotEqual(node, node2, message)
+        self.assertNotEqual(node, node2)
 
     def test_eq_url(self):
         node = TextNode("This is a text node", "bold", "google.com")
         node2 = TextNode("This is a text node", "bold", "google.com")
-        message = "Both nodes are equal"
-        self.assertEqual(node, node2, message)
+        self.assertEqual(node, node2)
 
     def test_not_eq_url(self):
         node = TextNode("This is a text node", "bold", "google.com")
         node2 = TextNode("This is a text node", "bold", "gogle.com")
-        message = "Both nodes are not equal"
-        self.assertNotEqual(node, node2, message)
+        self.assertNotEqual(node, node2)
 
+    #repr method should properly print class instance attributes
     def test_repr(self):
         node = TextNode("This is a text node", "bold", "google.com")
         self.assertEqual("TextNode(This is a text node, bold, google.com)", repr(node))

@@ -1,1 +1,2 @@
-python -m unittest discover -s src
+cd src 
+python -m unittest discover -s ../test
